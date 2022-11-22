@@ -21,7 +21,7 @@ pipeline {
                     }
                  }
            }
-      stage ('Installing Python, Ansible, pymssql and boto3') {
+      stage ('Installing SQL command line tool') {
           steps {
               script{
               sh '$ sudo curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/8/prod.repo'
