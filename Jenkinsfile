@@ -8,7 +8,7 @@ pipeline {
 	      script{
               sh ' sudo yum install python3-pip -y'
               sh ' sudo pip3 install boto3 '
-              sh ' sudo pip3 install ansible-core -y '
+              sh ' sudo pip3 install ansible-core  '
 		}
           }
        }
