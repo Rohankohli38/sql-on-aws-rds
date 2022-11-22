@@ -21,29 +21,11 @@ pipeline {
                     }
                  }
            }
-      stage ('Installing SQL command line tool') {
-          steps {
-              script{
-              sh ' sudo curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/8/prod.repo'
-              sh 'sudo yum remove unixODBC-utf16 unixODBC-utf16-devel'
-              sh 'sudo yum install -y mssql-tools unixODBC-devel'
-              sh 'echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile'
-              sh 'echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc source ~/.bashrc'
-                    }
-                 }
-          }
 
       stage ('Running Ansible playbook to install RDS SQl on AWS') {
           steps {
               script{
               sh ' ansible-playbook main.yml ' 
-                    }
-                 }
-           }
-     stage ('Running Ansible playbook to create database on RDS SQL server') {
-          steps {
-              script{
-              sh ' ansible-playbook main2.yml '
                     }
                  }
            }
