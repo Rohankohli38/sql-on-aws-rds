@@ -1,7 +1,7 @@
 pipeline {
     agent {
 	label 'aws'
-}
+    }
     stages {
        stage ('Installing Python, Ansible, pymssql and boto3') {
           steps {
@@ -21,6 +21,12 @@ pipeline {
                     }
                  }
            }
- 
+      stage ('Running Ansible playbook to install RDS SQl on AWS') {
+          steps {
+              script{
+              sh ' ansible-playbook main.yml ' 
+                    }
+                 }
+           }
    }  
 }
