@@ -3,21 +3,13 @@ pipeline {
 	label 'aws'
 }
     stages {
-       stage ('Building Docker image form docker file') {
+       stage ('Installing Python, Ansible and boto3') {
           steps {
 	      script{
-              sh 'echo Hello'
+              sh ' sudo yum install python3-pip -y'
+              sh ' sudo pip3 install boto3 '
+              sh ' sudo pip3 install ansible-core -y '
 		}
-          }
-       }
-       stage ('Listing docker image') {
-          steps {
-              sh ' echo hello '
-          }
-       }
-       stage ('Building docker container using docker image') {
-          steps {
-              sh 'echo hello'
           }
        }
    }  
