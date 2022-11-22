@@ -24,7 +24,7 @@ pipeline {
       stage ('Installing Python, Ansible, pymssql and boto3') {
           steps {
               script{
-              sh '$ sudo curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/8/prod.repo
+              sh '$ sudo curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/8/prod.repo'
               sh 'sudo yum remove unixODBC-utf16 unixODBC-utf16-devel'
               sh 'sudo yum install -y mssql-tools unixODBC-devel'
               sh 'echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile'
