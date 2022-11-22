@@ -1,0 +1,7 @@
+---
+- name: SQL Server
+  hosts: localhost
+  connection: local
+  roles:
+    - createdb_and_executescript
+

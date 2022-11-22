@@ -1,0 +1,60 @@
+---
+
+### RDS subnet Group Parameters ###
+
+subnet_group_name: "rds-subnet-group"
+subnet_group_description: "Creating Subnet Group"
+subnets_1: "subnet-04fc93e776f37deb5"
+subnets_2: "subnet-0cbef3c833a882191"
+
+### Parameter group variables ###
+
+db_parameter_group_name: "para-sqlserver-se-15"
+para_group_description: "Creating parametergroup"
+para_engine: "sqlserver-se-15.0"
+
+
+### Option group variables ###
+
+option_group_name: "option-sqlserver-se-15"
+engine_name : "sqlserver-se"
+major_engine_version: "15.00"
+option_group_description: "Creating Option Group"
+option_name: "SSRS"
+option_group_port: 8443
+vpc_security_group_memberships: "sg-0b27a3e4ba4eae927"
+
+### RDS variables ###
+
+allocated_storage: 20
+instance_class: "db.t3.xlarge" 
+instance_identifier: "my-db-instance"
+#subnet_group_name: "default" 
+db_engine: "sqlserver-se"
+db_engine_version: "15.00.4236.7.v1"
+master_passwd: "rootroot"
+master_username: "root"
+max_allocated_storage: 100
+port: "1433"
+region: "ap-south-1"
+storage_type: "gp2"
+vpc_security_group_id: "sg-0b27a3e4ba4eae927"
+multi_az: "false"
+publicly_accessible: "no"
+storage_encrypted: "true"
+kms_key_id: "e5b913d0-e53a-43ca-9f9c-13862852ca89"
+#db_parameter_group_name: "default.sqlserver-se-15.0"
+timezone: "UTC"
+auto_minor_version_upgrade: "yes" 
+apply_immediately: "yes"
+wait: "yes"
+enable_iam_database_authentication: "no"
+debug_botocore_endpoint_logs: "no"
+deletion_protection: "no"
+force_failover: "no"
+read_replica: "no"
+copy_tags_to_snapshot: "yes"
+allow_major_version_upgrade: "yes"
+skip_final_snapshot: "no"
+backup_retention_period: 
+

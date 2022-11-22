@@ -1,0 +1,9 @@
+---
+filename_to_execute: "table.sql"
+login_username: "admin"
+login_password: "rootroot"
+login_port: "1433"
+login_host: "testing-db.chhlks3y2gpy.ap-south-1.rds.amazonaws.com"
+database_name: "testdb"
+path_to_sql_script: "/home/ec2-user/Ansible-with-SQL-server/playbooks/roles/copy_and_execute/files/"
+

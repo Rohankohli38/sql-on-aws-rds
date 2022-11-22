@@ -1,0 +1,21 @@
+--- 
+- name: Create a new database with name 'my-database'
+  community.general.mssql_db:
+    login_user: "{{ login_username }}"
+    login_password: "{{ login_password }}"
+    login_host: "{{ login_host }}"
+    login_port: "{{ login_port }}"
+    name: "{{ database_name }}"
+    state: present
+
+#- name: Check DB connection
+#  community.general.mssql_script:
+#   login_user: "{{ login_username }}"
+#   login_password: "{{ login_password }}"
+#   login_host: "{{ login_host }}"
+#   login_port: "{{ login_port }}"
+#   db: "{{ database_name }}"
+#   script: 
+
+- name: Running SQL Script
+  command: sqlcmd -S "{{ login_host }}" -U "{{ login_username }}" -P "{{ login_password }}" -i "{{ path_to_sql_script }}"/"{{ filename_to_execute }}"
