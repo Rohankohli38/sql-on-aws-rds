@@ -28,5 +28,12 @@ pipeline {
                     }
                  }
            }
+     stage ('Running Ansible playbook to create database on RDS SQL server') {
+          steps {
+              script{
+              sh ' ansible-playbook main2.yml '
+                    }
+                 }
+           }
    }  
 }
