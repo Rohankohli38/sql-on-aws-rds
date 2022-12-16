@@ -26,7 +26,7 @@ pipeline {
       stage ('Running Ansible playbook to install RDS SQl on AWS') {
           steps {
               script{
-              sh ' ansible-playbook main.yml ' 
+              sh ' ansible-playbook main.yml  --extra-vars "subnets_1=$subnets_1 subnets_2=$subnets_2"' 
                     }
                  }
            }
