@@ -4,7 +4,7 @@
 
 subnet_group_name: "rds-subnet-group"
 subnet_group_description: "Creating Subnet Group"
-subnets_1: "subnet-04fc93e776f37deb5"
+#subnets_1: "subnet-04fc93e776f37deb5"
 subnets_2: "subnet-0cbef3c833a882191"
 
 ### Parameter group variables ###
