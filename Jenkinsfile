@@ -6,10 +6,10 @@ pipeline {
        stage ('Installing Python, Ansible, pymssql and boto3') {
           steps {
 	      script{
-              sh ' sudo yum install python3-pip -y'
-              sh ' sudo pip3 install boto3 '
-              sh ' sudo pip3 install ansible-core  '
-              sh ' sudo pip3 install pymssql '
+           //   sh ' sudo yum install python3-pip -y'
+           //   sh ' sudo pip3 install boto3 '
+           //   sh ' sudo pip3 install ansible-core  '
+           //   sh ' sudo pip3 install pymssql '
                	    }
                  }
           }
