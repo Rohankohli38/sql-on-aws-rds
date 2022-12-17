@@ -2,7 +2,8 @@
 - name: create-sql-rds
   hosts: localhost
   connection: local
-  var_files: db-vault.yml 
+  var_files: 
+    - db-vault.yml 
   gather_facts : false
   roles:
     - sql-rds-install
