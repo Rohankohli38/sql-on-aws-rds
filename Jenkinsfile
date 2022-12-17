@@ -27,7 +27,7 @@ pipeline {
           steps {
               script{
               withCredentials([file(credentialsId: 'vault-password', variable: 'vault-password')]) {
- 		sh ' ansible-playbook main.yml --vault-password-file ${vault-password} db-vault.vault --extra-vars "subnets_1=$subnets_1 subnets_2=$subnets_2 db_engine=$db_engine db_engine_version=$db_engine_version"' 
+ 		sh ' ansible-playbook main.yml db-vault.vault --vault-password-file ${vault-password} --extra-vars "subnets_1=$subnets_1 subnets_2=$subnets_2 db_engine=$db_engine db_engine_version=$db_engine_version"' 
 		}
               }
           }
