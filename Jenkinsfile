@@ -26,9 +26,11 @@ pipeline {
       stage ('Running Ansible playbook to install RDS SQl on AWS') {
           steps {
               script{
+              withCredentials([string(credentialsId: 'vault-password', variable: 'vault-password')]) {
               sh ' ansible-playbook main.yml --ask-vault-pass -e @db-vault.vault --extra-vars "subnets_1=$subnets_1 subnets_2=$subnets_2 db_engine=$db_engine db_engine_version=$db_engine_version"' 
                     }
                  }
            }
+       }
    }  
 }
