@@ -32,7 +32,7 @@ instance_identifier: "my-db-instance"
 #subnet_group_name: "default" 
 #db_engine: "sqlserver-se"
 #db_engine_version: "15.00.4236.7.v1"
-master_passwd: "rootroot"
+#master_passwd: "rootroot"
 master_username: "root"
 max_allocated_storage: 100
 port: "1433"
