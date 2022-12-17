@@ -30,8 +30,8 @@ allocated_storage: 20
 instance_class: "db.t3.xlarge" 
 instance_identifier: "my-db-instance"
 #subnet_group_name: "default" 
-db_engine: "sqlserver-se"
-db_engine_version: "15.00.4236.7.v1"
+#db_engine: "sqlserver-se"
+#db_engine_version: "15.00.4236.7.v1"
 master_passwd: "rootroot"
 master_username: "root"
 max_allocated_storage: 100
