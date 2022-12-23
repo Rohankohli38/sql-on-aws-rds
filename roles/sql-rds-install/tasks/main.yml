@@ -48,7 +48,7 @@
   when: kms_key_id == ""
 - name: Conditional (true and false)
   set_fact: 
-      kms_id: "{{ rds_info.key_id }} if kms_key_id == '' else {{ kms_key_id }}"
+      kms_id: "'{{ rds_info.key_id }}' if kms_key_id == '' else '{{ kms_key_id }}'"
 - name: Print the generated password
   debug:
     msg: "The password is {{ kms_id }}"
