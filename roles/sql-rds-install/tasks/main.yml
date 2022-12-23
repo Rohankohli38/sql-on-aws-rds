@@ -41,10 +41,11 @@
   amazon.aws.kms_key:
     alias: mykey
     tags:
-      Name: myKey
+      Name: myKey  
       Purpose: protect_RDS
     region: ap-south-1
   register: rds_info
+  when: kms_key_id == ""
 - name: Print the generated password
   debug:
     msg: "The password is {{ rds_info.key_id }}"
