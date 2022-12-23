@@ -41,7 +41,7 @@
   amazon.aws.kms_key:
     alias: mykey
     tags:
-      Name: myKey  
+      Name: mykey  
       Purpose: protect_RDS
     region: ap-south-1
   register: rds_info
