@@ -49,6 +49,7 @@
 - name: Print the generated password
   debug:
     msg: "The password is {{ rds_info.key_id }}"
+  when: kms_key_id == ""
     
 #### Creating RDS instance ####
 
