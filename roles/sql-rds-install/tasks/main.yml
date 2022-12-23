@@ -46,12 +46,11 @@
     region: ap-south-1
   register: rds_info
   when: kms_key_id == ""
-- name: Conditional (true and false)
-  set_fact: 
-      kms_id: "{{ '{{ rds_info.key_id }}' if kms_key_id == '' else '{{ kms_key_id }}' }}"
+
 - name: Print the generated password
   debug:
     msg: "The password is {{ kms_id }}"
+  when: kms_key_id == ""
     
 #### Creating RDS instance ####
 
@@ -76,7 +75,7 @@
     port: "{{ port }}"
     backup_retention_period: "{{ backup_retention_period }}"
     storage_encrypted: "{{ storage_encrypted }}"
-    kms_key_id: "{{ kms_id }}"
+    kms_key_id: "{{ '{{ rds_info.key_id }}' if kms_key_id == '' else '{{ kms_key_id }}' }}"
     db_parameter_group_name: "{{ db_parameter_group_name }}"
     option_group_name: "{{ option_group_name }}"
     timezone: "{{ timezone }}"
