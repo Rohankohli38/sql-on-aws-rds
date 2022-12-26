@@ -8,10 +8,10 @@
     description: "{{ subnet_group_description }}"
     region: "{{ region }}"
     subnets:
-      - "{{ subnets_1 }}"
+      - "{{ item }}"
       #- "{{ subnets_2 }}"
       #- "{{ subnets_3 }}"
-      
+  with_items: "{{ subnets_1.split(',') }}"      
 #### Creating RDS Parameter Group ####
 
 - name: Creating Parameter Group
