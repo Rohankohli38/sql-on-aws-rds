@@ -26,7 +26,7 @@ pipeline {
       stage ('Running Ansible playbook to install RDS SQl on AWS') {
           steps {
               script{
-		      sh ' ansible-playbook main.yml --vault-password-file secret.txt --extra-vars "{"subnets_list": [$subnets_1,$subnets_2,$subnets_3], "kms_key_id": "$kms_key_id" }"'
+		      sh ' ansible-playbook main.yml --vault-password-file secret.txt --extra-vars "{"subnets_list": [$subnets_1,$subnets_2,$subnets_3], "kms_key_id": "$kms_key_id", "db_engine": "$db_engine", "db_engine_version": "$db_engine_version"}"'
 		}
               }
           }
