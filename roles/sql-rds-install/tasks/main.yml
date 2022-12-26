@@ -1,6 +1,9 @@
 ---
 #### Creating RDS subnet group ####
-
+- name:
+  debug:
+    msg: "{{ kms_key_id }}"
+    
 - name: Add or change a subnet group
   community.aws.rds_subnet_group:
     state: present
