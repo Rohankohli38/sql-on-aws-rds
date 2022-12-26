@@ -47,8 +47,8 @@
       Purpose: protect_RDS
     region: ap-south-1
   register: rds_info
-  set_fact: "{{ '{{ rds_info.key_id }}' if kms_key_id == '' else '{{ kms_key_id }}' }}"
-    my_kms_id: 
+  set_fact: 
+    my_kms_id:  "{{ '{{ rds_info.key_id }}' if kms_key_id == '' else '{{ kms_key_id }}' }}"
   when: kms_key_id == None
 
 - name: Print the KMS ID
