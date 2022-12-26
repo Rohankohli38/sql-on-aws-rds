@@ -87,7 +87,6 @@
     option_group_name: "{{ option_group_name }}"
     timezone: "{{ timezone }}"
     auto_minor_version_upgrade: "{{ auto_minor_version_upgrade }}"
-    apply_immediately: "{{ apply_immediately }}"
     wait: "{{ wait }}"
     enable_iam_database_authentication: "{{ enable_iam_database_authentication }}"
     debug_botocore_endpoint_logs: "{{ debug_botocore_endpoint_logs }}"
