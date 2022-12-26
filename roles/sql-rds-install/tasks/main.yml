@@ -47,12 +47,12 @@
       Purpose: protect_RDS
     region: ap-south-1
   register: rds_info
-  when: kms_key_id == ""
+  when: kms_key_id == "null"
 
 - name: Print the KMS ID
   debug:
     msg: "The KMS ID is {{ my_kms_id }}"
-  when: kms_key_id == ""
+  when: kms_key_id == "null"
   
   
 #- name: Update IAM policy on an existing KMS key
