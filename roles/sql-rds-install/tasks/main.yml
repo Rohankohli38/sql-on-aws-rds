@@ -82,7 +82,7 @@
     port: "{{ port }}"
     backup_retention_period: "{{ backup_retention_period }}"
     storage_encrypted: "{{ storage_encrypted }}"
-    kms_key_id: "{{ '{{ rds_info.key_id }}' if kms_key_id == '' else '{{ kms_key_id }}' }}"
+    kms_key_id: "{{ '7ca715d8-202f-479a-a90a-cfc8a1f34c29' if kms_key_id == '' else 'e5b913d0-e53a-43ca-9f9c-13862852ca89' }}"
     db_parameter_group_name: "{{ db_parameter_group_name }}"
     option_group_name: "{{ option_group_name }}"
     timezone: "{{ timezone }}"
