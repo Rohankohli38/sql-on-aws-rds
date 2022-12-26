@@ -51,7 +51,7 @@
 
 - name: Print the KMS ID
   debug:
-    msg: "The KMS ID is {{ {{ rds_info.key_id }}  if kms_key_id == '' else {{ kms_key_id }}  }}"
+    msg: "The KMS ID is {{ '{{ rds_info.key_id }}'  if kms_key_id == '' else '{{ kms_key_id }}'  }}"
   when: kms_key_id == None
   
   
