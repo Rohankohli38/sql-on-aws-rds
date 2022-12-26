@@ -47,9 +47,9 @@
   register: rds_info
   when: kms_key_id == ""
 
-- name: Print the generated password
+- name: Print the KMS ID
   debug:
-    msg: "The password is {{ rds_info.key_id }}"
+    msg: "The KMS ID is {{ rds_info.key_id }}"
   when: kms_key_id == ""
   
   
