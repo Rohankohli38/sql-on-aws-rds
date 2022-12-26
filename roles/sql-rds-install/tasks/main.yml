@@ -11,6 +11,10 @@
       - "{{ subnets_1 }}"
       - "{{ subnets_2 }}"
       - "{{ subnets_3 }}"
+  with_items:
+    - "a"
+    - "b"
+    - "c"
       
 #### Creating RDS Parameter Group ####
 
