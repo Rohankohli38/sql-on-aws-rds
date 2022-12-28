@@ -4,6 +4,10 @@
   debug:
     msg: "{{ kms_key_id }}"
     
+- name:
+  debug:
+    msg: "{{ subnets_list }}"
+    
 - name: Add or change a subnet group
   community.aws.rds_subnet_group:
     state: present
