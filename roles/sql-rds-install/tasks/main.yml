@@ -71,7 +71,7 @@
     engine: "{{ db_engine }}"
     license_model: "license-included"
     engine_version: "{{ db_engine_version }}"
-    db_instance_identifier: "{{ instance_identifier}}"
+    #db_instance_identifier: "{{ instance_identifier}}"
     master_username: "{{ master_username }}"
     master_user_password: "{{ master_passwd }}"
     db_instance_class: "{{ instance_class }}"
