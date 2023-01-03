@@ -43,8 +43,8 @@
   
 #### Creating KMS Key ####
   
-- name: Creating KMS key
-  amazon.aws.kms_key:
+#- name: Creating KMS key
+#  amazon.aws.kms_key:
     alias: mykey
     tags:
       Name: mykey  
@@ -53,8 +53,8 @@
   register: rds_info
   when: kms_key_id == None
 
-- name: Print the KMS ID
-  debug:
+#- name: Print the KMS ID
+#  debug:
     msg: "The KMS ID is {{ rds_info.key_id if kms_key_id == None else kms_key_id }}"
   when: kms_key_id == None
   
@@ -68,8 +68,8 @@
     
 #### Creating RDS instance ####
 
-- name: create RDS instance
-  community.aws.rds_instance:
+#- name: create RDS instance
+#  community.aws.rds_instance:
     region: "{{ region }}"
     state: "present"
     engine: "{{ db_engine }}"
