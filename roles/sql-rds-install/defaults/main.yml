@@ -11,14 +11,14 @@ subnet_group_description: "Creating Subnet Group"
 
 db_parameter_group_name: "para-sqlserver-se-15"
 para_group_description: "Creating parametergroup"
-para_engine: "sqlserver-se-15.0"
+#para_engine: "sqlserver-se-15.0"
 
 
 ### Option group variables ###
 
 option_group_name: "option-sqlserver-se-15"
-engine_name : "sqlserver-se"
-major_engine_version: "15.00"
+#engine_name : "sqlserver-se"
+#major_engine_version: "15.00"
 option_group_description: "Creating Option Group"
 option_name: "SSRS"
 option_group_port: 8443
