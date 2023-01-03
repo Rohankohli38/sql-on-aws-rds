@@ -1,12 +1,12 @@
 ---
 #### Creating RDS subnet group ####
-- name:
-  debug:
-    msg: "{{ kms_key_id }}"
+#- name:
+#  debug:
+#    msg: "{{ kms_key_id }}"
     
-- name:
-  debug:
-    msg: "{{ subnets_list }}"
+#- name:
+#  debug:
+#    msg: "{{ subnets_list }}"
     
 - name: Add or change a subnet group
   community.aws.rds_subnet_group:
@@ -45,18 +45,18 @@
   
 #- name: Creating KMS key
 #  amazon.aws.kms_key:
-    alias: mykey
-    tags:
-      Name: mykey  
-      Purpose: protect_RDS
-    region: ap-south-1
-  register: rds_info
-  when: kms_key_id == None
+#    alias: mykey
+#    tags:
+#      Name: mykey  
+#      Purpose: protect_RDS
+#    region: ap-south-1
+#  register: rds_info
+#  when: kms_key_id == None
 
 #- name: Print the KMS ID
 #  debug:
-    msg: "The KMS ID is {{ rds_info.key_id if kms_key_id == None else kms_key_id }}"
-  when: kms_key_id == None
+#    msg: "The KMS ID is {{ rds_info.key_id if kms_key_id == None else kms_key_id }}"
+#  when: kms_key_id == None
   
   
 #- name: Update IAM policy on an existing KMS key
@@ -70,37 +70,37 @@
 
 #- name: create RDS instance
 #  community.aws.rds_instance:
-    region: "{{ region }}"
-    state: "present"
-    engine: "{{ db_engine }}"
-    license_model: "license-included"
-    engine_version: "{{ db_engine_version }}"
-    #db_instance_identifier: "{{ instance_identifier}}"
-    master_username: "{{ master_username }}"
-    master_user_password: "{{ master_passwd }}"
-    db_instance_class: "{{ instance_class }}"
-    storage_type: "{{ storage_type }}"
-    allocated_storage: "{{ allocated_storage }}"
-    max_allocated_storage: "{{ max_allocated_storage }}"
-    multi_az: "{{ multi_az }}"
-    db_subnet_group_name: "{{ subnet_group_name }}"
-    publicly_accessible: "{{ publicly_accessible }}"
-    vpc_security_group_ids: "{{ vpc_security_group_id }}"
-    port: "{{ port }}"
-    backup_retention_period: "{{ backup_retention_period }}"
-    storage_encrypted: "{{ storage_encrypted }}"
-    kms_key_id: "{{ rds_info.key_id if kms_key_id == None else kms_key_id }}"
-    db_parameter_group_name: "{{ db_parameter_group_name }}"
-    option_group_name: "{{ option_group_name }}"
-    timezone: "{{ timezone }}"
-    auto_minor_version_upgrade: "{{ auto_minor_version_upgrade }}"
-    wait: "{{ wait }}"
-    enable_iam_database_authentication: "{{ enable_iam_database_authentication }}"
-    debug_botocore_endpoint_logs: "{{ debug_botocore_endpoint_logs }}"
-    deletion_protection: "{{ deletion_protection }}"
-    apply_immediately: "{{ apply_immediately }}"
-    force_failover: "{{ force_failover }}"
-    read_replica: "{{ read_replica }}"
-    copy_tags_to_snapshot: "{{ copy_tags_to_snapshot }}"
-    allow_major_version_upgrade: "{{ allow_major_version_upgrade }}"
-    skip_final_snapshot: "{{ skip_final_snapshot }}"
+#    region: "{{ region }}"
+#    state: "present"
+#    engine: "{{ db_engine }}"
+#    license_model: "license-included"
+#    engine_version: "{{ db_engine_version }}"
+#    #db_instance_identifier: "{{ instance_identifier}}"
+#    master_username: "{{ master_username }}"
+#    master_user_password: "{{ master_passwd }}"
+#    db_instance_class: "{{ instance_class }}"
+#    storage_type: "{{ storage_type }}"
+#    allocated_storage: "{{ allocated_storage }}"
+#    max_allocated_storage: "{{ max_allocated_storage }}"
+#    multi_az: "{{ multi_az }}"
+#    db_subnet_group_name: "{{ subnet_group_name }}"
+#    publicly_accessible: "{{ publicly_accessible }}"
+#    vpc_security_group_ids: "{{ vpc_security_group_id }}"
+#    port: "{{ port }}"
+#    backup_retention_period: "{{ backup_retention_period }}"
+#    storage_encrypted: "{{ storage_encrypted }}"
+#    kms_key_id: "{{ rds_info.key_id if kms_key_id == None else kms_key_id }}"
+#    db_parameter_group_name: "{{ db_parameter_group_name }}"
+#    option_group_name: "{{ option_group_name }}"
+#    timezone: "{{ timezone }}"
+#    auto_minor_version_upgrade: "{{ auto_minor_version_upgrade }}"
+#    wait: "{{ wait }}"
+#    enable_iam_database_authentication: "{{ enable_iam_database_authentication }}"
+#    debug_botocore_endpoint_logs: "{{ debug_botocore_endpoint_logs }}"
+#    deletion_protection: "{{ deletion_protection }}"
+#    apply_immediately: "{{ apply_immediately }}"
+#    force_failover: "{{ force_failover }}"
+#   read_replica: "{{ read_replica }}"
+#    copy_tags_to_snapshot: "{{ copy_tags_to_snapshot }}"
+#    allow_major_version_upgrade: "{{ allow_major_version_upgrade }}"
+#    skip_final_snapshot: "{{ skip_final_snapshot }}"
