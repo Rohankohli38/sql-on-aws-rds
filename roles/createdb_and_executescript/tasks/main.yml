@@ -22,4 +22,4 @@
 #   script: 
 
 - name: Running SQL Script
-  shell: "sqlcmd -S '{{ rds_endpoint }}' -U '{{ master_username }}' -P '{{ master_passwd }}'"
+  command: sqlcmd -S "{{ rds_endpoint }}" -U "{{ master_username }}" -P "{{ master_passwd }}"
