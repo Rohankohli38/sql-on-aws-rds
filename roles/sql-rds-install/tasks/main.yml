@@ -111,6 +111,6 @@
     msg: "The KMS ID is {{ rds_info.endpoint.address }}"
 
 - name: Register dummy host with variable
-    add_host:
-      name: "DUMMY_HOST"
-      rds_endpoint: "{{ rds_info.endpoint.address }}"
+  add_host:
+    name: "DUMMY_HOST"
+    rds_endpoint: "{{ rds_info.endpoint.address }}"
