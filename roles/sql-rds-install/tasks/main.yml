@@ -114,6 +114,6 @@
   set_fact:
     rds_endpoint: "{{ rds_info.endpoint.address }}"
 
-- name: Print the KMS ID
+- name: Print RDS endpoint
   debug:
     msg: "{{ rds_endpoint }}"
