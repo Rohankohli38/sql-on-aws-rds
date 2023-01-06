@@ -1,6 +1,8 @@
 ---
 - name: SQL Server
   hosts: localhost
+  vars_files: 
+    - db-vault.yml 
   connection: local
   roles:
     - createdb_and_executescript
