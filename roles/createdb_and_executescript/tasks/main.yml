@@ -24,9 +24,15 @@
 #   login_port: "{{ login_port }}"
 #   db: "{{ database_name }}"
 #   script: 
+
+
 - name: Restore the dump file to database 'my_db'
   community.general.mssql_db:
-    name: my_db
+    login_user: "{{ master_username }}"
+    login_password: "{{ master_passwd }}"
+    login_host: "{{ rds_endpoint }}"
+    login_port: "{{ port }}"
+    name: "{{ database_name }}"
     state: present
     target: "{{ path_to_sql_script }}/{{ filename_to_execute }}"
 
