@@ -1,10 +1,10 @@
 --- 
 - name: Create a new database with name 'my-database'
   community.general.mssql_db:
-    login_user: "{{ login_username }}"
-    login_password: "{{ login_password }}"
-    login_host: "{{ login_host }}"
-    login_port: "{{ login_port }}"
+    login_user: "{{ master_username }}"
+    login_password: "{{ master_passwd }}"
+    login_host: "{{ rds_info.endpoint.address }}"
+    login_port: "{{ port }}"
     name: "{{ database_name }}"
     state: present
 
@@ -18,4 +18,4 @@
 #   script: 
 
 - name: Running SQL Script
-  command: sqlcmd -S "{{ login_host }}" -U "{{ login_username }}" -P "{{ login_password }}" -i "{{ path_to_sql_script }}"/"{{ filename_to_execute }}"
+  command: sqlcmd -S "{{ rds_info.endpoint.address }}" -U "{{ master_username }}" -P "{{ master_passwd }}" -i "{{ path_to_sql_script }}"/"{{ filename_to_execute }}"
