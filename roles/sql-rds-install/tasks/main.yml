@@ -116,7 +116,7 @@
 
 - name: Print the KMS ID
   debug:
-    var: "{{ rds_endpoint }}"
+    msg: "{{ rds_endpoint }}"
 
 
 - name: Register dummy host with variable
