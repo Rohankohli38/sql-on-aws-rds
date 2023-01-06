@@ -110,7 +110,7 @@
   debug:
     var: "{{ rds_info.endpoint.address }}"
 
-- name: Populate genders
+- name: Setting RDS enpoint variable
   set_fact:
     rds_endpoint: "{{ rds_info.endpoint.address }}"
 
