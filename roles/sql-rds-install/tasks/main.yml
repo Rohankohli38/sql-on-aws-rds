@@ -104,11 +104,8 @@
     copy_tags_to_snapshot: "{{ copy_tags_to_snapshot }}"
     allow_major_version_upgrade: "{{ allow_major_version_upgrade }}"
     skip_final_snapshot: "{{ skip_final_snapshot }}"
-  register: rds_info.endpoint.address
+  register: rds_info
 
-- set_fact:
-    rds_enpoint: "{{ rds_info.endpoint.address }}" 
-
-- name: RDS endpoint
+- name: Print the KMS ID
   debug:
-    var: rds_endpoint
+    msg: "The KMS ID is {{ rds_info.endpoint.address }}"
