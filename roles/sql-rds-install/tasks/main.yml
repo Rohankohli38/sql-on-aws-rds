@@ -105,7 +105,10 @@
     allow_major_version_upgrade: "{{ allow_major_version_upgrade }}"
     skip_final_snapshot: "{{ skip_final_snapshot }}"
   register: rds_info
- 
-- name: Print the KMS ID
+
+- set_fact:
+    rds_enpoint: "{{ rds_info.endpoint.address }}" 
+
+- name: RDS endpoint
   debug:
-    msg: "The KMS ID is {{ rds_info.endpoint.address }}"
+    msg: "The KMS ID is {{ rds_endpoint }}"
