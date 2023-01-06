@@ -1,4 +1,8 @@
 --- 
+- name: Print the KMS ID
+  debug:
+    msg: "The KMS ID is {{ rds_info.endpoint.address }}"
+
 - name: Create a new database with name 'my-database'
   community.general.mssql_db:
     login_user: "{{ master_username }}"
