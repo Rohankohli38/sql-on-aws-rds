@@ -110,7 +110,11 @@
   debug:
     var: "{{ rds_info.endpoint.address }}"
 
-- name: Register dummy host with variable
-  add_host:
-    name: "DUMMY_HOST"
+#- name: Register dummy host with variable
+#  add_host:
+#    name: "DUMMY_HOST"
+ #   rds_endpoint: "{{ rds_info.endpoint.address }}"
+
+- name: Populate genders
+  set_fact:
     rds_endpoint: "{{ rds_info.endpoint.address }}"
