@@ -33,7 +33,7 @@
     login_host: "{{ rds_endpoint }}"
     login_port: "{{ port }}"
     name: "{{ database_name }}"
-    state: present
+    state: import
     target: "{{ path_to_sql_script }}/{{ filename_to_execute }}"
 
 
