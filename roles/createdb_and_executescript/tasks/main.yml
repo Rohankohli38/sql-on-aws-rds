@@ -35,7 +35,3 @@
     name: "{{ database_name }}"
     state: import
     target: "{{ path_to_sql_script }}/{{ filename_to_execute }}"
-
-
-- name: Running SQL Script
-  command: sqlcmd -S "{{ rds_endpoint }}" -U "{{ master_username }}" -P "{{ master_passwd }}" -i "{{ path_to_sql_script }}{{ filename_to_execute }}"
