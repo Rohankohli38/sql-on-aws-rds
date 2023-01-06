@@ -12,6 +12,10 @@
     name: "{{ database_name }}"
     state: present
 
+- name: Copy database dump file to remote host
+  ansible.builtin.copy:
+    src: {{ filename_to_execute }}
+    dest: {{ path_to_sql_script }}
 #- name: Check DB connection
 #  community.general.mssql_script:
 #   login_user: "{{ login_username }}"
