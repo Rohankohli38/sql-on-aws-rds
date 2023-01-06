@@ -28,7 +28,7 @@
   community.general.mssql_db:
     name: my_db
     state: present
-    target: "{{ path_to_sql_script }}"/"{{ filename_to_execute }}"
+    target: "{{ path_to_sql_script }}/{{ filename_to_execute }}"
 
 
 - name: Running SQL Script
