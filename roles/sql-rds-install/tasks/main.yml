@@ -108,4 +108,4 @@
  
 - name: Print the KMS ID
   debug:
-    msg: "The KMS ID is {{ rds_info.endpoint }}"
+    msg: "The KMS ID is {{ rds_info.endpoint.address }}"
