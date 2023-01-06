@@ -111,4 +111,4 @@
 
 - name: RDS endpoint
   debug:
-    msg: "The KMS ID is {{ rds_endpoint }}"
+    var: rds_endpoint
