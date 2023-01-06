@@ -104,7 +104,7 @@
     copy_tags_to_snapshot: "{{ copy_tags_to_snapshot }}"
     allow_major_version_upgrade: "{{ allow_major_version_upgrade }}"
     skip_final_snapshot: "{{ skip_final_snapshot }}"
- register: endpoint 
+  register: endpoint 
  
 - name: Print the KMS ID
   debug:
